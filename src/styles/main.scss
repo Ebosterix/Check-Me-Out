@@ -1,0 +1,113 @@
+ @import "base";
+// You need the base only when you are not using bootstrap. In that case, go to _base.scss
+// to customize it as you may want.
+
+@import "variables";
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+// Write your sass code here or import partials
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  line-height: 1.6;
+}
+
+// Header Styles
+header {
+  width: 100%;
+  height: 500px;
+  background: url(../images/mountain.jpg) center/cover no-repeat; // Background image
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $header-bg-color; // Green overlay
+    z-index: 1;
+  }
+
+  h1 {
+    position: relative;
+    z-index: 2;
+    font-size: 3rem;
+    color: $text-color;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .profile-picture {
+    position: relative;
+    z-index: 2;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid $text-color;
+    box-shadow: $box-shadow;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+// Main Section Styles
+main {
+  padding: 20px;
+
+  section {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    h2 {
+      margin-bottom: 10px;
+      font-size: 2rem;
+      color: #333;
+      text-align: center;
+    }
+
+    ul {
+      list-style-type: disc;
+      padding-left: 40px;
+
+      li {
+        font-size: 1rem;
+        color: #555;
+        margin-bottom: 5px;
+      }
+    }
+
+    .experience {
+      h3 {
+        font-size: 1.5rem;
+        color: #444;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+// Footer Styles
+footer {
+  width: 100%;
+  background-color: $header-bg-color;
+  color: $text-color;
+  text-align: center;
+  padding: 10px 0;
+}
